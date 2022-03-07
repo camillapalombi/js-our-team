@@ -14,7 +14,7 @@
   }
   
   .container {
-    max-width: 1200px;
+    max-width: 1203px;
     margin: 0 auto;
   }
   
@@ -47,7 +47,7 @@
   .team-container {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
+    justify-content: center;
   }
   
   .team-card {
