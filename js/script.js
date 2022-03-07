@@ -37,9 +37,55 @@ const arrObjMembers = [
         name : 'Barbara Ramos',
         profession : 'Graphic Designer',
         img : 'img/barbara-ramos-graphic-designer.jpg'
-     }
+     },
  ];
- 
+
+
+//BONUS!
+ const btnAdd = document.getElementById('addMemberButton');
+
+btnAdd.addEventListener('click', createNewUser);
+
+function createNewUser() {
+
+    let userName = document.getElementById('name').value;
+    let userProfession = document.getElementById('role').value;
+    let userImage = document.getElementById('image').value;
+
+    arrObjMembers.push({
+        name : userName,
+        profession : userProfession,
+        img : userImage
+     });
+
+     let containerCards = document.querySelector('.team-container'); //contenitore di tutte le card nel DOM
+
+    let arrSaveCards = [];
+  
+    for (let chiave = 0; chiave < arrObjMembers.length; chiave++) {
+
+    let cardsCode = (`<div class="team-card">
+    <div class="card-image">
+    <img
+    src="${arrObjMembers[chiave].img}"
+    alt="Wayne Barnett"
+    />
+    </div>
+    <div class="card-text">
+   <h3>${arrObjMembers[chiave].name}</h3>
+   <p>${arrObjMembers[chiave].profession}</p>
+    </div>
+    </div>`);
+
+    arrSaveCards.push(cardsCode);
+
+    containerCards.innerHTML = arrSaveCards.join(""); //stampo le carte
+
+    }
+}
+//FINE BONUS!
+
+
 
 //2. stampiamo nel DOM le varie card dei membri tramite js;
 let containerCards = document.querySelector('.team-container'); //contenitore di tutte le card nel DOM
@@ -68,5 +114,3 @@ for (let chiave = 0; chiave < arrObjMembers.length; chiave++) {
 containerCards.innerHTML = arrSaveCards.join(""); //stampo le carte
 
 }
- 
-
