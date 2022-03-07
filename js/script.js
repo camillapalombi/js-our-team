@@ -50,7 +50,7 @@ let containerCards = document.querySelector('.team-container'); //contenitore di
   
 for (let chiave = 0; chiave < arrObjMembers.length; chiave++) {
 
-    let cardsCode = `<div class="team-card">
+    let cardsCode = (`<div class="team-card">
     <div class="card-image">
     <img
     src="${arrObjMembers[chiave].img}"
@@ -61,11 +61,11 @@ for (let chiave = 0; chiave < arrObjMembers.length; chiave++) {
    <h3>${arrObjMembers[chiave].name}</h3>
    <p>${arrObjMembers[chiave].profession}</p>
     </div>
-    </div>`;
+    </div>`);
 
  arrSaveCards.push(cardsCode);
 
-containerCards.innerHTML = arrSaveCards; //stampo le carte
+containerCards.innerHTML = arrSaveCards.join(""); //stampo le carte
 
 }
  
