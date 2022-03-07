@@ -16,7 +16,7 @@ const arrObjMembers = [
      {
         name : 'Angela Caroll',
         profession : 'Chief Editor',
-        img : 'img/angela-caroll-chief-editor-jpg'
+        img : 'img/angela-caroll-chief-editor.jpg'
      },
      {
         name : 'Walter Gordon',
@@ -39,23 +39,34 @@ const arrObjMembers = [
         img : 'img/barbara-ramos-graphic-designer.jpg'
      }
  ];
- console.log(arrObjMembers);
-
+ 
 
 //2. stampiamo nel DOM le varie card dei membri tramite js;
 let containerCards = document.querySelector('.team-container'); //contenitore di tutte le card nel DOM
 
-let cardsCode = `<div class="team-card">
-<div class="card-image">
-  <img
-    src="${arrObjMembers[0].img}"
-    alt="Wayne Barnett"
-  />
-</div>
-<div class="card-text">
-  <h3>${arrObjMembers[0].name}</h3>
-  <p>${arrObjMembers[0].profession}</p>
-</div>
-</div>`;
+ //inserisco il codice nel container
 
-containerCards.innerHTML = cardsCode; //inserisco il codice nel container
+ let arrSaveCards = [];
+  
+for (let chiave = 0; chiave < arrObjMembers.length; chiave++) {
+
+    let cardsCode = `<div class="team-card">
+    <div class="card-image">
+    <img
+    src="${arrObjMembers[chiave].img}"
+    alt="Wayne Barnett"
+    />
+    </div>
+    <div class="card-text">
+   <h3>${arrObjMembers[chiave].name}</h3>
+   <p>${arrObjMembers[chiave].profession}</p>
+    </div>
+    </div>`;
+
+ arrSaveCards.push(cardsCode);
+
+containerCards.innerHTML = arrSaveCards; //stampo le carte
+
+}
+ 
+
